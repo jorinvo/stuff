@@ -1,6 +1,10 @@
 ### protectMail
 protect email addresses from spam bots and have them look normal
 
+### vendorPrefix
+get a value with the right vendor prefix
+
+
 
 ## 3rd-party stuff
 
