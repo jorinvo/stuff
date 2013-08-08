@@ -1,0 +1,99 @@
+<head>
+	<title>protectMail Examples</title>
+	<script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+	<script src="protectMail.js"></script>
+</head>
+<body>
+
+<h1>protectMail Examples</h1>
+
+<p>
+	<h2>1. Generate href-attribute and replace content</h2>
+	<h3>Code:</h2>
+	<code>
+		&lt;a id=&quot;selector1&quot; data-name=&quot;joe&quot; data-host=&quot;fbi&quot; data-ending=&quot;com&quot;&gt;&lt;/a&gt;
+		<br>
+		&lt;script&gt;
+		<br>
+		   $('#selector1').protectMail();
+		<br>
+		&lt;/script&gt;
+		<br>
+		<br>
+		=&gt;
+		<br>
+		&lt;a id=&quot;selector&quot; data-name=&quot;joe&quot; data-host=&quot;fbi&quot; data-ending=&quot;com&quot; href=&quot;joe@fbi.com&quot;&gt;joe@fbi.com&lt;/a&gt;
+	</code>
+	<h3>Result:</h3>
+	<a id="selector1" data-name="joe" data-host="fbi" data-ending="com"></a>
+	<script>
+	   $('#selector1').protectMail();
+	</script>
+</p>
+
+<p>
+	<h2>2. Works for multi-selectors too</h2>
+	<h3>Code:</h2>
+	<code>
+		&lt;a class=&quot;selector2&quot; data-name=&quot;joe&quot; data-host=&quot;fbi&quot; data-ending=&quot;com&quot;&gt;&lt;/a&gt;
+		<br>
+		&lt;a class=&quot;selector2&quot; data-name=&quot;phil&quot; data-host=&quot;cia&quot; data-ending=&quot;com&quot;&gt;&lt;/a&gt;
+		<br>
+		$('.selector2').protectMail();
+		<br>
+		<br>
+		=&gt;
+		<br>
+		&lt;a class=&quot;selector2&quot; data-name=&quot;joe&quot; data-host=&quot;fbi&quot; data-ending=&quot;com&quot; href=&quot;joe@fbi.com&quot;&gt;joe@fbi.com&lt;/a&gt;
+		<br>
+		&lt;a class=&quot;selector2&quot; data-name=&quot;phil&quot; data-host=&quot;cia&quot; data-ending=&quot;com&quot; href=&quot;phil@cia.com&quot;&gt;phil@cia.com&lt;/a&gt;
+	</code>
+	<h3>Result:</h3>
+	<a class="selector2" data-name="joe" data-host="fbi" data-ending="com"></a>
+	<a class="selector2" data-name="phil" data-host="cia" data-ending="com"></a>
+	<script>
+	   $('.selector2').protectMail();
+	</script>
+</p>
+
+<p>
+	<h2>3. Only generate href-attribute</h2>
+	<h3>Code:</h2>
+	<code>
+		&lt;a id=&quot;selector3&quot; data-name=&quot;joe&quot; data-host=&quot;fbi&quot; data-ending=&quot;com&quot;&gt;my custom content&lt;/a&gt;
+		<br>
+		$('#selector3').protectMail({ content: false });
+		<br>
+		<br>
+		=&gt;
+		<br>
+		&lt;a id=&quot;selector3&quot; data-name=&quot;joe&quot; data-host=&quot;fbi&quot; data-ending=&quot;com&quot; href=&quot;joe@fbi.com&quot;&gt;my custom content&lt;/a&gt;
+	</code>
+	<h3>Result:</h3>
+	<a id="selector3" data-name="joe" data-host="fbi" data-ending="com">my custom content</a>
+	<script>
+	   $('#selector3').protectMail({ content: false });
+	</script>
+</p>
+
+<p>
+	<h2>4. Only replace content</h2>
+	<h3>Code:</h3>
+	<code>
+		&lt;span id=&quot;selector4&quot; data-name=&quot;joe&quot; data-host=&quot;fbi&quot; data-ending=&quot;com&quot;&gt;&lt;/span&gt;
+		<br>
+		$('#selector4').protectMail({ href: false });
+		<br>
+		<br>
+		=&gt;
+		<br>
+		&lt;span id=&quot;selector4&quot; data-name=&quot;joe&quot; data-host=&quot;fbi&quot; data-ending=&quot;com&quot;&gt;joe@fbi.com&lt;/span&gt;
+	</code>
+	<h3>Result:</h3>
+	<span id="selector4" data-name="joe" data-host="fbi" data-ending="com"></span>
+	<script>
+	   $('#selector4').protectMail({ href: false });
+	</script>
+</p>
+
+</body>
