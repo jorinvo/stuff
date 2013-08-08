@@ -4,6 +4,9 @@ protect email addresses from spam bots and have them look normal
 ### vendorPrefix
 get a value with the right vendor prefix
 
+### deviceDetection
+detect a specific device.
+only use this if feature detection is not possible!
 
 
 ## 3rd-party stuff
