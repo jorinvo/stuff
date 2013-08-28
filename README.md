@@ -34,3 +34,6 @@ http://masonry.desandro.com/
 
 __css transitions__
 http://ricostacruz.com/jquery.transit/
+
+__device detection when feature detection is not possible__
+http://github.com/matthewhudson/device.js
